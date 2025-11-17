@@ -1,4 +1,4 @@
-# Data Science Project - Milestone 1
+# Data Science Project - Lab 01
 
 *ArXiv Data Scraping and Repository Engineering*
 
