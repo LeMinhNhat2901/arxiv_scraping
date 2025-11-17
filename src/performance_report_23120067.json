@@ -1,0 +1,53 @@
+{
+  "report_metadata": {
+    "generated_at": "2025-11-17 12:35:23",
+    "student_id": "23120067",
+    "total_runtime_seconds": 2488.3,
+    "testbed": "Intended for Google Colab (CPU-only) per instructions; actual runtime depends on environment."
+  },
+  "implementation_summary": "This scraper collects arXiv papers' TeX sources and metadata. Workflow: for each arXiv id -> concurrently fetch Semantic Scholar references (one SS call which includes paper-level venue if available) and arXiv metadata (versions discovery via HEAD checks). Then download TeX sources for discovered versions, extract and keep .tex/.bib files. Tools: arxiv (python library), requests, BeautifulSoup4, concurrent.futures, Semantic Scholar REST API. Optimizations: requests.Session pooling, small LRU cache for SS calls, parallelism at paper-level and per-paper (HEAD checks & downloads), lightweight rate-limiter.",
+  "tools_and_libraries": [
+    "python (3.x)",
+    "arxiv (python package)",
+    "requests",
+    "BeautifulSoup4 (bs4)",
+    "concurrent.futures (ThreadPoolExecutor)",
+    "urllib3",
+    "psutil",
+    "tracemalloc",
+    "Semantic Scholar API (graph/v1)"
+  ],
+  "scraping_statistics": {
+    "papers_attempted": 1055,
+    "papers_successful": 1055,
+    "papers_failed": 0,
+    "overall_success_rate_percent": 100.0,
+    "average_time_per_paper_seconds": 2.359,
+    "average_sequential_processing_time_seconds": 28.202,
+    "entry_discovery_total_seconds": 16580.149,
+    "reference_scraping_total_seconds": 8594.124,
+    "download_total_seconds": 9433.778
+  },
+  "size_statistics_bytes": {
+    "average_size_before_bytes": 0,
+    "average_size_after_bytes": 305744,
+    "final_output_size_bytes": 322560867,
+    "max_disk_usage_sampled_bytes": 432046747
+  },
+  "references_statistics": {
+    "total_references_found": 895,
+    "references_with_arxiv_ids": 310,
+    "average_references_per_paper": 0.29,
+    "reference_arxiv_id_extraction_rate_percent": 34.64
+  },
+  "performance_memory": {
+    "peak_memory_mb": 399.89,
+    "average_memory_mb": 236.53
+  },
+  "other_metrics": {
+    "ss_requests_made": 2159,
+    "ss_rate_limit_hits": 0,
+    "versions_found_total": 1618,
+    "versions_downloaded_total": 1343
+  }
+}
