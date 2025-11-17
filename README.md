@@ -185,8 +185,8 @@ python src/scraping_arxiv.py \
 | Parameter | Required | Description | Example |
 |---------|----------|-------|-------|
 | `--student` | ✅ | Student ID | `--student 23120067` |
-| `--range` | ✅* | ArXiv ID range (start end) | `--range 2504.13946 2504.15000` |
-| `--ids` | ✅* | Specific list of IDs | `--ids 2504.13946 2504.13950` |
+| `--range` | ✅ | ArXiv ID range (start end) | `--range 2504.13946 2504.15000` |
+| `--ids` | ✅ | Specific list of IDs | `--ids 2504.13946 2504.13950` |
 | `--out` | ❌ | Output directory (default: student_id) | `--out ./data` |
 | `--workers` | ❌ | Parallel paper processing (default: 12) | `--workers 8` |
 | `--dworkers` | ❌ | Parallel version downloads (default: 4) | `--dworkers 3` |
